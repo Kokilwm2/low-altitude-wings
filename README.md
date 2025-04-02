@@ -1,18 +1,34 @@
-# 低空之翼
+# 低空之翼 - 低空服务模拟器
 
-一个专注于低空服务的模拟游戏，包括低空配送、低空预警和低空救援等特色玩法。
+这是一个展示低空服务模拟器游戏的官方网站。
 
-## 特色功能
+## 项目描述
 
-- 真实物理引擎
-- 动态天气系统
-- 多样化任务
-- 自由探索
+低空之翼是一款创新的低空服务模拟器游戏，玩家可以在游戏中体验：
+- 低空配送服务
+- 低空预警任务
+- 低空救援行动
 
-## 系统需求
+## 技术栈
 
-- 操作系统：Windows 10 64位
-- 处理器：Intel i5-6600k或同等性能
-- 内存：8 GB RAM
-- 显卡：GTX 1060 6GB或同等性能
-- 存储空间：20 GB可用空间 
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome 图标
+
+## 本地运行
+
+1. 克隆仓库
+```bash
+git clone https://github.com/Kokilwm2/low-altitude-wings.git
+```
+
+2. 打开 index.html 文件即可在浏览器中查看网站
+
+## 在线访问
+
+访问 [https://kokilwm2.github.io/low-altitude-wings](https://kokilwm2.github.io/low-altitude-wings) 查看在线版本。
+
+## 许可证
+
+© 2024 低空之翼 版权所有 
