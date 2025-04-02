@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00a8ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>玩法介绍 - 低空之翼</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .gameplay-page {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('game-bg.png') center/cover fixed;
+        }
+        
+        .gameplay-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gameplay-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .gameplay-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gameplay-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gameplay-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .gameplay-title {
+            color: #4ecdc4;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gameplay-description {
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .gameplay-details {
+            margin-top: 1rem;
+            text-align: left;
+        }
+        
+        .gameplay-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .gameplay-details li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .gameplay-details li::before {
+            content: '•';
+            color: #4ecdc4;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gameplay-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">低空之翼</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gameplay.html">玩法介绍</a></li>
+                <li><a href="features.html">游戏特色</a></li>
+                <li><a href="download.html">下载</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 玩法介绍页面内容 -->
+    <div class="gameplay-page">
+        <div class="gameplay-container">
+            <!-- 低空配送 -->
+            <div class="gameplay-item">
+                <div class="gameplay-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                <h3 class="gameplay-title">低空配送</h3>
+                <p class="gameplay-description">在城市低空区域进行精准配送，体验无人机物流的便捷与高效。</p>
+                <div class="gameplay-details">
+                    <ul>
+                        <li>智能路线规划</li>
+                        <li>实时天气影响</li>
+                        <li>货物保护机制</li>
+                        <li>配送时间管理</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 低空预警 -->
+            <div class="gameplay-item">
+                <div class="gameplay-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="gameplay-title">低空预警</h3>
+                <p class="gameplay-description">执行低空巡逻任务，及时发现并报告潜在风险，守护城市安全。</p>
+                <div class="gameplay-details">
+                    <ul>
+                        <li>区域监控系统</li>
+                        <li>风险等级评估</li>
+                        <li>紧急情况处理</li>
+                        <li>团队协作机制</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 低空救援 -->
+            <div class="gameplay-item">
+                <div class="gameplay-icon">
+                    <i class="fas fa-helicopter"></i>
+                </div>
+                <h3 class="gameplay-title">低空救援</h3>
+                <p class="gameplay-description">参与紧急救援行动，在复杂地形中快速响应，拯救生命。</p>
+                <div class="gameplay-details">
+                    <ul>
+                        <li>紧急任务系统</li>
+                        <li>救援装备管理</li>
+                        <li>医疗物资运输</li>
+                        <li>救援团队配合</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 低空之翼 版权所有</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i> 微信</a>
+                <a href="#"><i class="fab fa-tiktok"></i> 抖音</a>
+                <a href="#"><i class="fas fa-play-circle"></i> 哔哩哔哩</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

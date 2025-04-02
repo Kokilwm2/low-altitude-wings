@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00a8ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>下载 - 低空之翼</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .download-page {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('game-bg.png') center/cover fixed;
+        }
+        
+        .download-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .system-requirements {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        
+        .system-requirements h3 {
+            color: #4ecdc4;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .requirements-list {
+            list-style: none;
+        }
+        
+        .requirements-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .requirements-list li::before {
+            content: '•';
+            color: #4ecdc4;
+            position: absolute;
+            left: 0;
+        }
+        
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .store-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .store-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .store-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+        
+        .store-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .store-description {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .store-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .store-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .store-button i {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .download-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">低空之翼</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gameplay.html">玩法介绍</a></li>
+                <li><a href="features.html">游戏特色</a></li>
+                <li><a href="download.html">下载</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 下载页面内容 -->
+    <div class="download-page">
+        <div class="download-container">
+            <!-- 系统需求 -->
+            <div class="system-requirements">
+                <h3>系统需求</h3>
+                <ul class="requirements-list">
+                    <li>操作系统：Windows 10 64位</li>
+                    <li>处理器：Intel i5-6600k或同等性能</li>
+                    <li>内存：8 GB RAM</li>
+                    <li>显卡：GTX 1060 6GB或同等性能</li>
+                    <li>存储空间：20 GB可用空间</li>
+                    <li>网络：宽带互联网连接</li>
+                    <li>声卡：DirectX 兼容声卡</li>
+                    <li>其他：游戏手柄（推荐）</li>
+                </ul>
+            </div>
+
+            <!-- 下载选项 -->
+            <div class="download-options">
+                <!-- Steam -->
+                <div class="store-card">
+                    <div class="store-icon">
+                        <i class="fab fa-steam"></i>
+                    </div>
+                    <h3 class="store-title">Steam 商店</h3>
+                    <p class="store-description">通过 Steam 平台下载游戏，享受自动更新、云存档等 Steam 特色功能。</p>
+                    <a href="https://store.steampowered.com/app/你的游戏ID" class="store-button" target="_blank">
+                        <i class="fab fa-steam"></i> 在 Steam 上购买
+                    </a>
+                </div>
+
+                <!-- Epic -->
+                <div class="store-card">
+                    <div class="store-icon">
+                        <i class="fab fa-epic"></i>
+                    </div>
+                    <h3 class="store-title">Epic 商店</h3>
+                    <p class="store-description">在 Epic 商店购买游戏，享受独家优惠和特别活动。</p>
+                    <a href="https://store.epicgames.com/zh-CN/p/你的游戏名称" class="store-button" target="_blank">
+                        <i class="fab fa-epic"></i> 在 Epic 上购买
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 低空之翼 版权所有</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i> 微信</a>
+                <a href="#"><i class="fab fa-tiktok"></i> 抖音</a>
+                <a href="#"><i class="fas fa-play-circle"></i> 哔哩哔哩</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
