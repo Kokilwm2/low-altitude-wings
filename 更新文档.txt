@@ -1,0 +1,81 @@
+我来教您如何添加新的图片、视频等资源文件：
+
+1. 首先，在您的项目文件夹中创建一个专门的资源文件夹，比如：
+   - `images/` 用于存放图片
+   - `videos/` 用于存放视频
+   - `assets/` 用于存放其他资源
+
+2. 将新的资源文件放入对应文件夹，例如：
+   - 将新图片放入 `images/` 文件夹
+   - 将新视频放入 `videos/` 文件夹
+
+3. 在HTML文件中引用新资源，例如：
+```html
+<!-- 引用新图片 -->
+<img src="images/new-image.jpg" alt="新图片">
+
+<!-- 引用新视频 -->
+<video src="videos/new-video.mp4" controls></video>
+```
+
+4. 更新到GitHub的步骤：
+```bash
+# 1. 添加新的资源文件
+git add images/new-image.jpg
+git add videos/new-video.mp4
+
+# 2. 添加修改的HTML文件
+git add index.html
+
+# 3. 提交更改
+git commit -m "添加新的游戏截图和视频"
+
+# 4. 推送到GitHub
+git push origin gh-pages
+```
+
+具体示例：
+假设您要添加新的游戏截图：
+
+1. 创建图片文件夹：
+```bash
+mkdir images
+```
+
+2. 将图片放入文件夹：
+- 将您的图片文件复制到 `images` 文件夹中
+
+3. 在HTML中使用新图片：
+```html
+<img src="images/gameplay1.jpg" alt="游戏截图1">
+```
+
+4. 更新到GitHub：
+```bash
+git add images/gameplay1.jpg
+git add index.html
+git commit -m "添加新的游戏截图"
+git push origin gh-pages
+```
+
+注意事项：
+1. 图片格式建议使用：
+   - JPG/JPEG：适合照片
+   - PNG：适合需要透明背景的图片
+   - WebP：更现代的格式，文件更小
+
+2. 视频格式建议使用：
+   - MP4：最通用的格式
+   - WebM：更现代的格式，文件更小
+
+3. 文件大小建议：
+   - 图片：建议压缩到1MB以下
+   - 视频：建议压缩到10MB以下
+   - 如果文件太大，可以考虑使用视频托管服务（如YouTube）
+
+4. 文件命名建议：
+   - 使用小写字母
+   - 用连字符（-）代替空格
+   - 使用有意义的名称
+
+您想添加什么类型的资源？我可以帮您具体操作。
