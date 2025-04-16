@@ -433,6 +433,29 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .screenshots img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .video {
+        width: 100%;
+    }
+    .comment-section textarea {
+        width: 100%;
+        height: 100px;
+    }
+}
+
 /* 动画关键帧 */
 @keyframes fadeInUp {
     from {

@@ -106,4 +106,22 @@ window.addEventListener('scroll', () => {
             card.style.transform = 'translateY(0)';
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 页面加载时的淡入效果
+    gsap.from('.hero-content h1', {duration: 1, y: -50, opacity: 0, ease: 'power2.out'});
+    gsap.from('.hero-content p', {duration: 1, y: -30, opacity: 0, delay: 0.2, ease: 'power2.out'});
+    gsap.from('.cta-buttons', {duration: 1, y: -20, opacity: 0, delay: 0.4, ease: 'power2.out'});
+
+    // 按钮悬停动画
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            gsap.to(button, {duration: 0.3, y: -3, boxShadow: '0 4px 15px rgba(78, 205, 196, 0.3)'});
+        });
+        button.addEventListener('mouseleave', () => {
+            gsap.to(button, {duration: 0.3, y: 0, boxShadow: 'none'});
+        });
+    });
 }); 

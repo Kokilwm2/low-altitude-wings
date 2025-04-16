@@ -9,6 +9,12 @@
     <title>低空之翼 - 低空服务模拟器</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <meta name="description" content="低空之翼是一款创新的低空服务模拟器游戏，体验低空配送、预警和救援任务。">
+    <meta name="keywords" content="低空之翼, 低空服务模拟器, 游戏, 低空配送, 低空预警, 低空救援">
     <style>
         .home-page {
             min-height: 100vh;
@@ -86,15 +92,20 @@
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">低空之翼</div>
-            <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="gameplay.html">玩法介绍</a></li>
-                <li><a href="features.html">游戏特色</a></li>
-                <li><a href="download.html">下载</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">低空之翼</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gameplay.html">玩法介绍</a></li>
+                    <li class="nav-item"><a class="nav-link" href="features.html">游戏特色</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download.html">下载</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -104,13 +115,40 @@
             <h1>低空之翼</h1>
             <p>体验低空服务的无限可能</p>
             <div class="cta-buttons">
-                <a href="gameplay.html" class="cta-button">
+                <a href="gameplay.html" class="btn btn-primary">
                     <i class="fas fa-gamepad"></i> 了解玩法
                 </a>
-                <a href="download.html" class="cta-button">
+                <a href="download.html" class="btn btn-success">
                     <i class="fas fa-download"></i> 立即下载
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <h2>游戏截图</h2>
+        <div class="screenshots">
+            <img src="images/screenshot1.jpg" alt="游戏截图1" class="img-fluid">
+            <img src="images/screenshot2.jpg" alt="游戏截图2" class="img-fluid">
+            <img src="images/screenshot3.jpg" alt="游戏截图3" class="img-fluid">
+        </div>
+        <h2>游戏视频</h2>
+        <div class="video">
+            <video controls class="img-fluid">
+                <source src="videos/gameplay.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2>留言板</h2>
+        <form id="commentForm">
+            <textarea id="commentText" placeholder="在这里输入您的留言..."></textarea>
+            <button type="button" onclick="submitComment()">提交留言</button>
+        </form>
+        <div id="commentsList">
+            <!-- 留言将显示在这里 -->
         </div>
     </div>
 
@@ -122,10 +160,54 @@
                 <a href="#"><i class="fab fa-weixin"></i> 微信</a>
                 <a href="#"><i class="fab fa-tiktok"></i> 抖音</a>
                 <a href="#"><i class="fas fa-play-circle"></i> 哔哩哔哩</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kokilwm2.github.io/low-altitude-wings" target="_blank"><i class="fab fa-facebook"></i> 分享到Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://kokilwm2.github.io/low-altitude-wings&text=低空之翼 - 低空服务模拟器" target="_blank"><i class="fab fa-twitter"></i> 分享到Twitter</a>
             </div>
         </div>
     </footer>
 
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>请启用JavaScript以查看 <a href="https://disqus.com/?ref_noscript">Disqus评论</a>。</noscript>
+
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh')">中文</button>
+        <button onclick="setLanguage('en')">English</button>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            // 简单的语言切换逻辑
+            if (lang === 'zh') {
+                document.documentElement.lang = 'zh';
+                // 可以在这里添加更多的中文内容切换逻辑
+            } else if (lang === 'en') {
+                document.documentElement.lang = 'en';
+                // 可以在这里添加更多的英文内容切换逻辑
+            }
+        }
+    </script>
+
     <script src="script.js"></script>
+    <script>
+        function submitComment() {
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() !== '') {
+                const commentList = document.getElementById('commentsList');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.textContent = commentText;
+                commentList.appendChild(newComment);
+                document.getElementById('commentText').value = '';
+            }
+        }
+    </script>
 </body>
 </html> 

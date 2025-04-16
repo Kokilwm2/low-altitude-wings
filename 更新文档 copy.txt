@@ -1,0 +1,68 @@
+好的，我来为您详细说明手动更新网站的操作步骤：
+
+1. 准备工作：
+   ```
+   1. 打开命令提示符（CMD）或PowerShell
+   2. 进入项目目录：
+      cd C:\Users\12928\Desktop\game-website
+   ```
+
+2. 检查文件状态：
+   ```
+   git status
+   ```
+   这会显示哪些文件被修改了
+
+3. 添加修改的文件：
+   ```
+   git add .
+   ```
+   这会添加所有修改的文件到暂存区
+
+4. 提交更改：
+   ```
+   git commit -m "更新说明：这里写您做了什么修改"
+   ```
+   例如：`git commit -m "更新首页布局"`
+
+5. 推送到GitHub：
+   ```
+   git push origin gh-pages
+   ```
+
+6. 等待部署：
+   - 推送成功后，等待1-2分钟
+   - 访问 https://kokilwm2.github.io/low-altitude-wings 查看更新效果
+
+注意事项：
+1. 确保您在 `gh-pages` 分支上：
+   ```
+   git branch
+   ```
+   如果不在，使用：
+   ```
+   git checkout gh-pages
+   ```
+
+2. 如果推送失败，可以尝试：
+   ```
+   git push -f origin gh-pages
+   ```
+   （注意：强制推送要谨慎使用）
+
+3. 如果遇到网络问题：
+   - 检查网络连接
+   - 等待几分钟后重试
+   - 或者使用手机热点等其他网络
+
+4. 文件命名建议：
+   - 使用英文命名
+   - 避免使用空格和特殊字符
+   - 图片文件放在 `images` 文件夹中
+
+5. 更新图片时：
+   - 将新图片放入 `images` 文件夹
+   - 在HTML文件中使用相对路径引用
+   - 例如：`<img src="images/your-image.jpg">`
+
+您需要我详细解释哪一步吗？或者您想了解其他方面的操作？
