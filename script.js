@@ -58,31 +58,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// 移动端菜单
-const createMobileMenu = () => {
-    const nav = document.querySelector('.nav-container');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // 创建菜单按钮
-    const menuButton = document.createElement('button');
-    menuButton.className = 'mobile-menu-button';
-    menuButton.innerHTML = '<i class="fas fa-bars"></i>';
-    
-    // 添加菜单按钮到导航栏
-    nav.insertBefore(menuButton, navLinks);
-    
-    // 添加点击事件
-    menuButton.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+// 添加throttle函数
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+}
+
+// 优化scroll事件监听
+window.addEventListener('scroll', throttle(() => {
+    const cards = document.querySelectorAll('.feature-card');
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < window.innerHeight - 100) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
     });
-    
-    // 点击导航链接时关闭菜单
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+}, 200));
+
+// 优化createMobileMenu函数
+const createMobileMenu = (() => {
+    let menuCreated = false;
+    return () => {
+        if (menuCreated) return;
+        const nav = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
+        const menuButton = document.createElement('button');
+        menuButton.className = 'mobile-menu-button';
+        menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+        nav.insertBefore(menuButton, navLinks);
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    });
-};
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        menuCreated = true;
+    };
+})();
 
 // 在移动端创建菜单
 if (window.innerWidth <= 768) {
@@ -94,18 +125,6 @@ window.addEventListener('resize', () => {
     if (window.innerWidth <= 768) {
         createMobileMenu();
     }
-});
-
-// 添加滚动动画效果
-window.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.feature-card');
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if (cardTop < window.innerHeight - 100) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }
-    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {

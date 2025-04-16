@@ -1,0 +1,35 @@
+{
+  "name": "game-website",
+  "version": "1.0.0",
+  "description": "这是一个展示低空服务模拟器游戏的官方网站。",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kokilwm2/low-altitude-wings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kokilwm2/low-altitude-wings/issues"
+  },
+  "homepage": "https://github.com/Kokilwm2/low-altitude-wings#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csurf": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
